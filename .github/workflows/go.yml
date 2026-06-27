@@ -24,4 +24,13 @@ jobs:
     - name: Build
       run: go build -v ./...
     - name: Test
-      run: go test -v ./...
+      run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
+
+    - name: Coverage summary
+      run: |
+        total=$(go tool cover -func=coverage.out | tail -1)
+        echo "$total"
+        echo "### Coverage" >> "$GITHUB_STEP_SUMMARY"
+        echo '```' >> "$GITHUB_STEP_SUMMARY"
+        echo "$total" >> "$GITHUB_STEP_SUMMARY"
+        echo '```' >> "$GITHUB_STEP_SUMMARY"

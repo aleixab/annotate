@@ -1,5 +1,8 @@
 # nvim-annotate
 
+[![CI](https://github.com/aleixab/nvim-annotate/actions/workflows/go.yml/badge.svg)](https://github.com/aleixab/nvim-annotate/actions/workflows/go.yml)
+[![Release](https://img.shields.io/github/v/release/aleixab/nvim-annotate)](https://github.com/aleixab/nvim-annotate/releases/latest)
+
 Commit-anchored, **private** code annotations for Neovim. Notes render inline as
 virtual text next to your code, are stored entirely outside any repo (never
 committed, never shared), and survive file churn — teammate commits, `git pull`,
@@ -51,7 +54,25 @@ Designed for working across hundreds of repos with many Neovim instances open:
 
 ## Install
 
-### Binary
+### Prebuilt binary (recommended)
+
+Each [release](https://github.com/aleixab/nvim-annotate/releases/latest) ships
+static binaries for Linux, macOS and Windows (no runtime deps). Download the one
+for your platform, then put it on your `PATH`:
+
+```sh
+# example: Linux x86_64
+curl -fsSL -o nvim-annotate \
+  https://github.com/aleixab/nvim-annotate/releases/latest/download/nvim-annotate_linux_amd64
+chmod +x nvim-annotate
+install -m755 nvim-annotate ~/.local/bin/
+nvim-annotate version
+```
+
+Assets are named `nvim-annotate_<os>_<arch>` (`.exe` on Windows); a
+`checksums.txt` accompanies each release.
+
+### Build from source
 
 ```sh
 go build -o nvim-annotate ./cmd/nvim-annotate
