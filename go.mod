@@ -1,4 +1,4 @@
-module github.com/aleabmo/nvim-annotate
+module github.com/aleixab/nvim-annotate
 
 go 1.26.4
 

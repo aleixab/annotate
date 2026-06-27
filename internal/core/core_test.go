@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aleabmo/nvim-annotate/internal/gitutil"
-	"github.com/aleabmo/nvim-annotate/internal/store"
+	"github.com/aleixab/nvim-annotate/internal/gitutil"
+	"github.com/aleixab/nvim-annotate/internal/store"
 )
 
 func TestRemapLine_BlobUnchanged(t *testing.T) {

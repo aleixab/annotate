@@ -13,8 +13,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/aleabmo/nvim-annotate/internal/core"
-	"github.com/aleabmo/nvim-annotate/internal/store"
+	"github.com/aleixab/nvim-annotate/internal/core"
+	"github.com/aleixab/nvim-annotate/internal/store"
 )
 
 func main() {

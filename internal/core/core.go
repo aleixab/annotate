@@ -10,10 +10,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/aleabmo/nvim-annotate/internal/diff"
-	"github.com/aleabmo/nvim-annotate/internal/fuzzy"
-	"github.com/aleabmo/nvim-annotate/internal/gitutil"
-	"github.com/aleabmo/nvim-annotate/internal/store"
+	"github.com/aleixab/nvim-annotate/internal/diff"
+	"github.com/aleixab/nvim-annotate/internal/fuzzy"
+	"github.com/aleixab/nvim-annotate/internal/gitutil"
+	"github.com/aleixab/nvim-annotate/internal/store"
 )
 
 // Tunables for anchoring and matching.
