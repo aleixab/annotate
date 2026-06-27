@@ -3,7 +3,7 @@
 // response on stdout; errors are written as {"error": "..."} and exit non-zero.
 // It has no knowledge of Neovim and is fully usable as a standalone CLI.
 //
-// Usage: nvim-annotate <add|list|edit|delete|search|reanchor|prune|export|import|stats>
+// Usage: nvim-annotate <add|list|edit|delete|search|reanchor|prune|export|import|stats|version>
 package main
 
 import (
@@ -17,9 +17,18 @@ import (
 	"github.com/aleixab/nvim-annotate/internal/store"
 )
 
+// version is overridden at build time via -ldflags "-X main.version=...".
+var version = "dev"
+
 func main() {
 	if len(os.Args) < 2 {
-		fail("usage: nvim-annotate <add|list|edit|delete|search|reanchor|prune|export|import|stats>")
+		fail("usage: nvim-annotate <add|list|edit|delete|search|reanchor|prune|export|import|stats|version>")
+	}
+
+	// version needs neither stdin nor a database.
+	if a := os.Args[1]; a == "version" || a == "--version" || a == "-v" {
+		fmt.Println(version)
+		return
 	}
 
 	in, err := io.ReadAll(os.Stdin)
